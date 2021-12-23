@@ -21,4 +21,5 @@ class User(AbstractUser):
         ('ESN', 'Ensign'),
     ]
     rank = models.CharField(max_length=15, choices=RANK_CHOICES, default='ESN')
+    ship = models.ForeignKey('ships.ship', null=True, blank=True, on_delete=models.CASCADE)
 
