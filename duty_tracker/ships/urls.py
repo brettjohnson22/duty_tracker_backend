@@ -3,5 +3,7 @@ from . import views
 
 app_name= 'ships'
 urlpatterns = [
-    path('captain/<int:ship_id>', views.get_ship_crew),
+    path('captain/', views.get_ship_crew),
+    path('test/', views.user_test),
+    path('my_crew/', views.get_own_crew)
 ]

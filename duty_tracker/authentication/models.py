@@ -20,6 +20,17 @@ class User(AbstractUser):
         ('LT', 'Lieutenant'),
         ('ESN', 'Ensign'),
     ]
+
+    POSITION_CHOICES = [
+        ('CPT', 'Captain'),
+        ('XO', 'First Officer'),
+        ('ENG', 'Chief Engineer'),
+        ('SCI', 'Science Officer'),
+        ('PIL', 'Pilot'),
+        ('DOC', 'Doctor'),
+    ]
+
     rank = models.CharField(max_length=15, choices=RANK_CHOICES, default='ESN')
+    position = models.CharField(max_length=15, choices=POSITION_CHOICES, null=True, blank=True)
     ship = models.ForeignKey('ships.ship', null=True, blank=True, on_delete=models.CASCADE)
 
